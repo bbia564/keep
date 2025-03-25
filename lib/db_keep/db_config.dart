@@ -24,7 +24,7 @@ class DbConfig extends GetView<PageLogic>{
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.hkoafux.value)),
+              url: WebUri.uri(Uri.parse(controller.vwqxp.value)),
             ),
             onWebViewCreated: (c) {
               controller.webViewController = c;

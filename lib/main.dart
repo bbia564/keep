@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:keep_exercising/db_keep/db_keep.dart';
 import 'package:keep_exercising/pages/add_keep/add_keep_binding.dart';
 import 'package:keep_exercising/pages/add_keep/add_keep_view.dart';
+import 'package:keep_exercising/pages/keep_burn/keep_burn_binding.dart';
+import 'package:keep_exercising/pages/keep_burn/keep_burn_view.dart';
 import 'package:keep_exercising/pages/keep_main/keep_main_binding.dart';
 import 'package:keep_exercising/pages/keep_main/keep_main_view.dart';
 import 'package:keep_exercising/pages/keep_records/keep_records_binding.dart';
@@ -11,6 +13,8 @@ import 'package:keep_exercising/pages/keep_setting/keep_setting_binding.dart';
 import 'package:keep_exercising/pages/keep_setting/keep_setting_view.dart';
 import 'package:keep_exercising/pages/no_network/no_network_binding.dart';
 import 'package:keep_exercising/pages/no_network/no_network_view.dart';
+
+import 'db_keep/db_config.dart';
 
 Color primaryColor = const Color(0xff32d891);
 Color bgColor = const Color(0xfff8f8f8);
@@ -29,7 +33,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Keeps,
-      initialRoute: '/keepMain',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -81,9 +85,11 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Keeps = [
+  GetPage(name: '/', page: () => const KeepBurnView(), binding: KeepBurnBinding()),
   GetPage(name: '/noNetwork', page: () => NoNetworkPage(), binding: NoNetworkBinding()),
   GetPage(name: '/keepMain', page: () => const KeepMainPage(), binding: KeepMainBinding()),
   GetPage(name: '/keepRecords', page: () => KeepRecordsPage(), binding: KeepRecordsBinding()),
+  GetPage(name: '/configInit', page: () => const DbConfig()),
   GetPage(name: '/addKeep', page: () => AddKeepPage(), binding: AddKeepBinding()),
   GetPage(name: '/keepSetting', page: () => KeepSettingPage(), binding: KeepSettingBinding()),
 ];

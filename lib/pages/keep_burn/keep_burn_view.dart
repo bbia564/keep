@@ -11,8 +11,8 @@ class KeepBurnView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.effertz.value
-              ? const CircularProgressIndicator(color: Colors.purple)
+          () => controller.kilback.value
+              ? const CircularProgressIndicator(color: Colors.green)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class KeepBurnView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.kwrviux();
+              controller.nwcjhpiv();
             },
             icon: const Icon(
               Icons.restart_alt,
